@@ -1,16 +1,13 @@
-int sumOfMultiples(int limit) {
-  int sum = 0;
-
-  for (int i = 1; i < limit; i++) {
-    if (i % 3 == 0 || i % 5 == 0) {
-      sum += i;
-    }
+bool isPrime(int number) {
+  if (number <= 1) return false;
+  for ( var i =2; i*i <= number; i++) {
+    if ( number % i ==0) return false;
   }
-
-  return sum;
+  return true;
 }
 
 void main() {
-  print(sumOfMultiples(10));
-  print(sumOfMultiples(20));
+  print(isPrime(7)); // true가 출력되어야 합니다
+  print(isPrime(12)); // false가 출력되어야 합니다
+  print(isPrime(23)); // true가 출력되어야 합니다
 }
