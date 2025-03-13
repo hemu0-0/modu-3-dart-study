@@ -21,6 +21,9 @@ class Cleric {
   int pray(int praytime) {
     int mprecover;
     mprecover = Random().nextInt(3) + praytime;
+    if(mp > maxmp) {
+      mp = maxmp;
+    }
     return mprecover;
   }
 }
