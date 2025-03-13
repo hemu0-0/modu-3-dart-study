@@ -18,10 +18,3 @@ class Hero {
   }
 }
 
-void main() {
-  Hero hero = Hero('홍길동' , 100);
-
-  hero.attack()
-  hero.run()
-  hero.main()
-}
