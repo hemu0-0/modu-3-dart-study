@@ -15,10 +15,3 @@ void main() {
     expect(cleric.hp, equals(50));
   });
 
-  test('Cleric Test' , () {
-    final cleric = Cleric('성자', 50, 10);
-
-    cleric.pray(2)
-    expect(cleric.mp);
-  })
-}
