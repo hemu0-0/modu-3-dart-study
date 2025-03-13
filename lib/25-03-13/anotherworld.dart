@@ -1,3 +1,7 @@
+import 'package:modu_3_dart_study/25-03-13/slime.dart';
+
+import 'hero.dart';
+
 Hero hero = Hero('용사',100);
 
 Slime slime1 = Slime('A', 50);

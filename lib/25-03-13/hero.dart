@@ -9,7 +9,7 @@ class Hero {
   }
 
   void run() {
-    print('$name 은 도망쳤다! ')
+    print('$name 은 도망쳤다! ');
   }
 
   void sleep() {
