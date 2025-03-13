@@ -3,9 +3,9 @@ import 'package:test/test.dart';
 
 void main() {
   test('Cleric Test' , () {
-    final cleric = Cleric('성자', 50, 5);
+    final cleric = Cleric('성자', 50, 1);
 
-    int mprecover = cleric.pray(5);
+    int mprecover = cleric.pray(3);
 
   expect(cleric.mp, equals(mprecover));
  });
