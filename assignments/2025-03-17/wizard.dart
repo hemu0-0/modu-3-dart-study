@@ -44,10 +44,12 @@ class Wizard {
 
     if (wand != null) {
       this.wand = wand;
-    }  else {
-      "지팡이는 null 일수 없습니다.";
+    }
+    else {
+    throw Exception('지팡이가 필요합니다.');
     };
   }
+
 
 
   // 이름은 null 이 아니고 3자 이상 이다.
