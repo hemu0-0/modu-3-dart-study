@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 
 import '../../assignments/2025-03-17/wizard.dart';
 
-void main () {
+void main() {
   group('Wand test', () {
     test('지팡이 이름 3글자 미만', () {
       expect(() => Wand('a', 10.0), throwsException);
@@ -19,8 +19,9 @@ void main () {
   });
   group('Wizard  test', () {
     test('마법사 이름 3글자 미만', () {
-      expect(() => Wizard('Ti', 100, 50, wand: Wand('FairyWand', 50.0)),
-          throwsException
+      expect(
+        () => Wizard('Ti', 100, 50, wand: Wand('FairyWand', 50.0)),
+        throwsException,
       );
     });
 
@@ -33,8 +34,7 @@ void main () {
     test('Wand가 null일때', () {
       Wand wand = Wand('현자의 지팡이', 10.0);
       Wizard wizard = Wizard('Harry', 100, 50);
-      expect(wizard.wand = null, throwsException);
+      expect(() => wizard.wand = null, throwsException);
     });
   });
 }
-
