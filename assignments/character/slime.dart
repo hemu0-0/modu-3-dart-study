@@ -16,8 +16,9 @@ class Slime {
 }
 
 class PoisonSlime extends Slime {
-  PoisonSlime(super.suffix);
   int poisonCount = 5;
+
+  PoisonSlime(super.suffix);
 
   @override
   void  attack(Hero hero) {
@@ -26,7 +27,7 @@ class PoisonSlime extends Slime {
       print('추가로, 독 포자를 살포했다!');
       print('${hero.hp~/5}포인트의 데미지');        //print가 먼저되어야 값이 올바름
       hero.hp -= (hero.hp~/5) ;
-      poisonCount -- ;
+      poisonCount--;
     }
 
   }

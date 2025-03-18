@@ -17,23 +17,24 @@ void main () {
       expect(wand.power, 99.0);
     });
   });
-  group('Wizard  test',() {
+  group('Wizard  test', () {
     test('마법사 이름 3글자 미만', () {
-      expect(() => Wizard('Ti', 100, 50, wand : Wand('FairyWand', 50.0) ), throwsException
+      expect(() => Wizard('Ti', 100, 50, wand: Wand('FairyWand', 50.0)),
+          throwsException
       );
     });
 
-    test('마법사의 체력이 음수',() {
-      Wand wand = Wand('FairyWand',50.0);
-      Wizard wizard = Wizard('Harry', -200, 50, wand : wand);
+    test('마법사의 체력이 음수', () {
+      Wand wand = Wand('FairyWand', 50.0);
+      Wizard wizard = Wizard('Harry', -200, 50, wand: wand);
       expect(wizard.hp, equals(0));
     });
 
     test('Wand가 null일때', () {
-      expect(() => Wizard('Harry', -200, 50 ), throwsException);
+      Wand wand = Wand('현자의 지팡이', 10.0);
+      Wizard wizard = Wizard('Harry', 100, 50);
+      expect(wizard.wand = null, throwsException);
     });
-
-  }
-  );
+  });
 }
 

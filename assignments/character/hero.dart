@@ -1,9 +1,9 @@
 import 'slime.dart';
 
 class Hero {
-  String name;
+  final String name;
   int hp ;
-  final int maxhp = 150;
+  static const  int maxHp = 150;
 
   Hero(this.name, this.hp);
 

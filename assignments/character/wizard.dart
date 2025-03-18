@@ -69,7 +69,8 @@ class Wizard {
 
     set hp(int value) {
       if (value < 0) {
-        this.hp = 0;
+        _hp = 0;
+        return;
       } else {
         _hp = value;
       }
