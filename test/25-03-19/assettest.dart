@@ -18,6 +18,8 @@ void main() {
       );
       expect(book.weight, equals(50));
       expect(book.calculateTax(), equals(200)); // 20000의 1%는 200
+      expect(book, isA<TangibleAsset>());
+      expect(book, isA<Asset>());
     });
 
     test('Computer의 무게는 100, 세금은 8%다 ', () {
@@ -34,6 +36,8 @@ void main() {
 
       expect(computer.weight, equals(100));
       expect(computer.calculateTax(), equals(16000));
+      expect(computer, isA<TangibleAsset>());
+      expect(computer, isA<Asset>());
     });
   });
 }

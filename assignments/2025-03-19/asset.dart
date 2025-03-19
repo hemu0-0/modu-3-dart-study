@@ -57,7 +57,7 @@ class Computer extends TangibleAsset {
       );
 
   @override
-  double get weight => 100;
+  double get weight => 100.0;
 
   @override
   int calculateTax() {
@@ -88,7 +88,7 @@ class Book extends TangibleAsset {
       );
 
   @override
-  double get weight => 50;
+  double get weight => 50.0;
 
   @override
   int calculateTax() {
