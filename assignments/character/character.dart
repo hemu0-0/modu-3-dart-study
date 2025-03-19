@@ -15,7 +15,9 @@ class Gunner extends Character {
   Gunner(super.name, super.hp);
 
   @override
-  void attack(slime) {
+  void attack(Slime slime) {
     // TODO: implement attack
+    print('${name}이(가) 총으로 ${slime.name}을(를) 공격합니다.');
+    slime.hp -= 10;
   }
 }
