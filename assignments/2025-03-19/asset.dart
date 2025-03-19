@@ -27,11 +27,11 @@ abstract class TangibleAsset extends Asset implements Thing {
     this.purchaseDate,
   ) : super(name, createdDate, manageDepart, description);
 
-  @override
-  double get weight;
-
-  @override
-  int calculateTax();
+  //필수는 아님, 상속받은 클래스에서 구현하면 됨.
+  //@override
+  //double get weight;
+  //@override
+  // int calculateTax();
 }
 
 class Computer extends TangibleAsset {
