@@ -8,8 +8,6 @@ class Slime {
 
   Slime(this.suffix);
 
-  get name => null;
-
   void attack(Hero hero) {
     print('슬라임$suffix 이 공격했다.');
     print('10의 데미지');
