@@ -26,7 +26,7 @@
 // }
 //
 // void main() async {
-//   Stopwatch stopwatch = Stopwatch()..start();
+//
 //   await printBird();
 //   print(stopwatch.elapsed);
 // }

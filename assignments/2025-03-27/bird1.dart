@@ -25,11 +25,13 @@ Future<void> birdSound3() async {
 }
 
 Future<void> printBird() async {
-  Future.wait([birdSound1(), birdSound2(), birdSound3()]);
+  await Future.wait([birdSound1(), birdSound2(), birdSound3()]);
   // List<Future<void>> results = [birdSound1(), birdSound2(), birdSound3()];
   //List<void> result = await Future.wait(results); //끝나는 시간 확인
 }
 
 void main() async {
+  Stopwatch stopwatch = Stopwatch()..start();
   await printBird();
+  print(stopwatch.elapsed);
 }
