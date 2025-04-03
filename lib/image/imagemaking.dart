@@ -9,7 +9,7 @@ void main() async {
 
   String imageUrl =
       'https://cdn.eyesmag.com/content/uploads/sliderImages/2024/11/08/1-66d6d810-6b71-445a-bd99-0e09628cb691.jpg';
-  String savePath = '${Directory.current.path}/lib/image/sample.jpg';
+  String savePath = '${Directory.current.path}/lib/image_test/sample.jpg';
 
   List<String> imageUrls = [
     'https://blog.kakaocdn.net/dn/cI8BDq/btsyktPgoR2/Z0cmFl8uJtRMs8uBTUae2k/img.jpg',

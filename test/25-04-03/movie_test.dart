@@ -14,7 +14,6 @@ void main() async {
     late MockClient mockClient;
     setUp(() {
       final mockClient = MockClient((request) async {
-        print("MockClient 요청 : ${request.url}");
         if (request.url.toString() ==
             'https://api.themoviedb.org/3/movie/upcoming?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1') {
           return http.Response.bytes(

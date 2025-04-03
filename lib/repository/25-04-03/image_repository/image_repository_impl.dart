@@ -17,7 +17,7 @@ class ImageRepositoryImpl implements ImageRepository {
   @override
   Future<void> saveImages(List<String> urls, String path) async {
     for (var i = 0; i < urls.length; i++) {
-      final filePath = '${Directory.current.path}/lib/image/$i.jpg';
+      final filePath = '${Directory.current.path}/lib/image_test/$i.jpg';
       await saveImage(urls[i], filePath);
     }
   }
