@@ -7,7 +7,7 @@ extension ToStoreModel on StoreDto {
       name: name ?? '이름 없음',
       address: addr ?? '주소 없음',
       remainStat: remainStat ?? '재고 없음',
-      stockAt: stockAt ?? '재고 없음',
+      stockAt: DateTime.parse(stockAt ?? DateTime.now().toString()),
     );
   }
 }

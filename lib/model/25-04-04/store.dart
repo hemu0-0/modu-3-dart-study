@@ -2,7 +2,7 @@ class Store {
   final String name;
   final String address;
   final String remainStat;
-  final String stockAt;
+  final DateTime stockAt;
 
   const Store({
     required this.name,
