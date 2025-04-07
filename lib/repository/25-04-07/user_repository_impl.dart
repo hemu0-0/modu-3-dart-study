@@ -7,8 +7,8 @@ import '../../data_source/25-04-07/auth_remote_data_source.dart';
 import '../../dto/25-04-07/user_dto.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  final AuthRemoteDataSource _userDataSource;
-  AuthRepositoryImpl(this._userDataSource);
+  final AuthRemoteDataSource userDataSource;
+  AuthRepositoryImpl(this.userDataSource);
 
   bool isValidEmail(String email) {
     final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
@@ -24,21 +24,23 @@ class AuthRepositoryImpl implements AuthRepository {
     required String email,
     required String password,
   }) async {
+    if (!isValidEmail(email)) {
+      return Result.error(RegistrationError.invalidEmail);
+    } else if (isWeakPassword(password)) {
+      return Result.error(RegistrationError.weakPassword);
+    }
     try {
-      final UserDto userDto = await _userDataSource.registerUser(
+      final userDto = await userDataSource.registerUser(
         email: email,
         password: password,
       );
-      final user = userDto.toUserModel();
-      return Result.success(user);
-    } on RegistrationError {
-      if (!isValidEmail(email)) {
-        return Result.error(RegistrationError.invalidEmail);
-      } else if (isWeakPassword(password)) {
-        return Result.error(RegistrationError.weakPassword);
-      } else {
+      if (userDto.errorMessage != null) {
         return Result.error(RegistrationError.networkError);
       }
+      final user = userDto.toUserModel();
+      return Result.success(user);
+    } catch (e) {
+      return Result.error(RegistrationError.networkError);
     }
   }
 }
